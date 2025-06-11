@@ -165,7 +165,7 @@
                         <!--Impuesto---->
                         <div class="col-sm-6 mb-2">
                             <label for="impuesto" class="form-label">Impuesto(IVA):</label>
-                            <input readonly type="text" name="impuesto" id="impuesto" value="{{ old('impuesto', '13%') }}" class="form-control border-success">
+                            <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-success">
                             @error('impuesto')
                             <small class="text-danger">{{ '*'.$message }}</small>
                             @enderror
@@ -242,7 +242,7 @@
     let total = 0;
 
     //Constantes
-    const impuesto = 13;
+    const impuesto = 18;
 
     function cancelarCompra() {
         //Elimar el tbody de la tabla

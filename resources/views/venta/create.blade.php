@@ -109,7 +109,7 @@
                                         </tr>
                                         <tr>
                                             <th></th>
-                                            <th colspan="4">IVA %</th>
+                                            <th colspan="4">IGV %</th>
                                             <th colspan="2"><span id="igv">0</span></th>
                                         </tr>
                                         <tr>
@@ -177,7 +177,7 @@
 
                         <!--Impuesto---->
                         <div class="col-sm-6">
-                            <label for="impuesto" class="form-label">Impuesto(IVA):</label>
+                            <label for="impuesto" class="form-label">Impuesto(IGV):</label>
                             <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-success">
                             @error('impuesto')
                             <small class="text-danger">{{ '*'.$message }}</small>
@@ -198,7 +198,7 @@
                         </div>
 
                         <!----User--->
-                        
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
                         <!--Botones--->
                         <div class="col-12 text-center">
@@ -262,7 +262,7 @@
     let total = 0;
 
     //Constantes
-    const impuesto = 13;
+    const impuesto = 18;
 
     function mostrarValores() {
         let dataProducto = document.getElementById('producto_id').value.split('-');

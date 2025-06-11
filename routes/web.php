@@ -9,7 +9,10 @@ use App\Http\Controllers\logoutController;
 use App\Http\Controllers\marcaController;
 use App\Http\Controllers\presentacioneController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\proveedorController;
+use App\Http\Controllers\roleController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\ventaController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +36,15 @@ Route::resources([
     'clientes' => clienteController::class,
     'proveedores' => proveedorController::class,
     'compras' => compraController::class,
-    'ventas' => ventaController::class
+    'ventas' => ventaController::class,
+    'users' => userController::class,
+    'roles' => roleController::class,
+    'profile' => profileController::class
 ]);
+
+Route::get('/login',[loginController::class,'index'])->name('login');
+Route::post('/login',[loginController::class,'login']);
+Route::get('/logout',[logoutController::class,'logout'])->name('logout');
 
 Route::get('/401', function () {
     return view('pages.401');

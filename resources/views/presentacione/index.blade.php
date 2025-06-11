@@ -19,13 +19,13 @@
         <li class="breadcrumb-item active">Presentaciones</li>
     </ol>
 
-    
+    @can('crear-presentacione')
     <div class="mb-4">
         <a href="{{route('presentaciones.create')}}">
             <button type="button" class="btn btn-primary">Añadir nuevo registro</button>
         </a>
     </div>
-    
+    @endcan
 
     <div class="card">
         <div class="card-header">
@@ -68,9 +68,9 @@
                                     </button>
                                     <ul class="dropdown-menu text-bg-light" style="font-size: small;">
                                         <!-----Editar presentacione--->
-                                        
+                                        @can('editar-presentacione')
                                         <li><a class="dropdown-item" href="{{route('presentaciones.edit',['presentacione'=>$item])}}">Editar</a></li>
-                                        
+                                        @endcan
                                     </ul>
                                 </div>
                                 <div>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div>
                                     <!------Eliminar Presentacione---->
-                                    
+                                    @can('eliminar-presentacione')
                                     @if ($item->caracteristica->estado == 1)
                                     <button title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirmModal-{{$item->id}}" class="btn btn-datatable btn-icon btn-transparent-dark">
                                         <svg class="svg-inline--fa fa-trash-can" aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-can" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
@@ -91,7 +91,7 @@
                                         <i class="fa-solid fa-rotate"></i>
                                     </button>
                                     @endif
-                                    
+                                    @endcan
                                 </div>
                             </div>
                         </td>
